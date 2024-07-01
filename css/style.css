@@ -114,15 +114,94 @@ button::-moz-focus-inner {
 
 /* CUSTOM CSS VALERY Quienesomos */
 
+.cards-equipo{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+	/* grid-template-columns: repeat(4, 1fr); */
+    padding: 20px;
+    grid-gap: 20px; 
+}
+.card-equipo{
+    background-color: #1c1b29;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(94, 30, 30, 0.18);
+	gap: 20px;
+}
+.container-equipo{
+    position: relative;
+    clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
+}
+img{
+    width: 100%;
+    display: block;
+    border-radius: 20px 20px 0 0;
+}
+.container-equipo:after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px 20px 0 0;
+    opacity: 0.5;
+}
+.card1>.container-equipo:after{
+    background-image: linear-gradient(
+        135deg,
+        #2bdce3,
+        #42ffdb
+    );
+}
+.card2>.container-equipo:after{
+    background-image: linear-gradient(
+        135deg,
+        #ffab1d,
+        #f8501c
+    );
+}
+.card3>.container-equipo:after{
+    background-image: linear-gradient(
+        135deg,
+        #2bdce3,
+        #42ffdb
+    );
+}
+.card4>.container-equipo:after{
+    background-image: linear-gradient(
+        135deg,
+        #ffab1d,
+        #f8501c
+    );
+}
+.details-equipo{
+    padding: 10px 10px;
+}
+.details-equipo>h3{
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 10px 0 15px 0;
+}
+.details-equipo>p{
+    color: #a0a0a0;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 400;
+}
+/* */
 .container-quienes {
 	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
 	max-width: 1100px;
 	margin: 0 auto;
+	text-align: center;
+	justify-content: center;
 }
 
 .card {
-	width: 100%;
+	width: 300px;
 	margin: 20px;
 	border-radius: 6px;
 	overflow: hidden;
@@ -254,6 +333,46 @@ button::-moz-focus-inner {
 }
 .card-blog .info-blog .btn{
 	box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
+}
+/*video*/
+.titulo-video{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+
+}
+
+.Nuestros-video{
+	position: relative;
+	font-size: 6vw;
+	color: #ffffff;
+	-webkit-text-stroke: 0.3vw #f8f8f8;
+	text-transform: uppercase;
+}
+.Nuestros-video::before{
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 1;
+	width: 0;
+	height: 100%;
+	color: #17c14d;
+	-webkit-text-stroke: 0vw #e3e3e3;
+	border-right:2px solid#17c14d;
+	overflow: hidden;
+	animation: animate 6s linear infinite;
+}
+@keyframes animate {
+	0%,10%,100%
+	{
+		width: 0;
+	}
+	70%,90%
+	{
+		width: 100%;
+	}
+
 }
 /* CUSTOM CSS VALERY EMD */
 
@@ -5117,7 +5236,6 @@ textarea.textarea-lg {
 }
 
 .post-modern-time .post-modern-time-month::after {
-	content: '/';
 	position: relative;
 	display: inline-block;
 	font-size: inherit;
@@ -15156,10 +15274,12 @@ html.rd-navbar-fixed-linked .page-header {
 	align-self: stretch;
 	align-items: stretch;
 	width: 100%;
+	max-width: 1400px;
 	height: auto;
 	min-height: inherit;
 	transition-property: transform;
 	box-sizing: content-box;
+	margin: 0 auto;
 }
 
 .swiper-container {
